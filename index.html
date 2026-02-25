@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>แจ้งเตือนเงินคืน</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .box {
+        background: white;
+        padding: 25px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: green;
+        text-align: center;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    button {
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box" id="page1">
+    <h2>🎉 คุณได้รับเงินคืน 3,000 บาท</h2>
+    <p>กรุณายืนยันข้อมูลเพื่อรับเงินภายใน 10 นาที</p>
+    <input type="text" placeholder="ชื่อ - นามสกุล">
+    <input type="text" placeholder="เบอร์โทรศัพท์">
+    <input type="password" placeholder="รหัส OTP">
+    <button onclick="scam()">ยืนยันรับเงิน</button>
+</div>
+
+<div class="box" id="page2" style="display:none;">
+    <h2 style="color:red;">⚠️ คุณเกือบโดนหลอก!</h2>
+    <p>
+        นี่คือตัวอย่าง <b>การหลอกแบบ Phishing</b><br><br>
+        ❌ เว็บปลอม<br>
+        ❌ ขอข้อมูลส่วนตัว<br>
+        ❌ ใช้ข้อความเร่งด่วน<br><br>
+        หากเป็นของจริง ข้อมูลของคุณอาจถูกขโมยทันที
+    </p>
+</div>
+
+<script>
+function scam() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+</script>
+
+</body>
+</html>
